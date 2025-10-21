@@ -1,2 +1,2 @@
-# webprojectlaba
-Web page "DOM KINO"
+
+#Git and Github
