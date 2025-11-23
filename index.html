@@ -1,18 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт кинотеатра Дом Кино Санкт-Петербург (лаба)</title>
-    <style> 
-        *{
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+    <title>Дом Кино - Лучшие фильмы в вашем городе</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h1> Дом кино </h1>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-film"></i> Дом Кино</h1>
+                </div>
+                <nav class="main-nav">
+                   <ul>
+                        <li><a href="#home"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="#movies"><i class="fas fa-video"></i> Фильмы</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> О нас</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-login">Вход</button>
+                    <button class="btn btn-register">Регистрация</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2>Добро пожаловать в Дом кино!</h2>
+                        <p>У нас вы найдете лучшие фильмы в уютной атмосфере современного кинотеатра</p>
+                        <div class="hero-buttons">
+                            <a href="#movies" class="btn btn-primary">Посмотреть фильмы</a>
+                            <a href="#schedule" class="btn btn-secondary">Расписание сеансов</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br>
+        
+        <section id="movies" class="featured-movies">
+            <div class="container">
+                <h2 class="section-title">Популярные фильмы</h2>
+                <br>
+                <div class="movies-grid">
+                    <div class="movie-card" data-movie-id="1">
+                        <div class="movie-poster">
+                            <img src="AA1HY0ka.jpg" alt="Фильм 1: Приключение">
+                            <div class="movie-rating">8.5</div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Фильм 1: Человек - бензопила </h3>
+                            <div class="movie-meta">
+                                <span class="genre">Приключения</span>
+                                <span class="duration">120 мин</span>
+                            </div>
+                            <p>Захватывающее приключение, которое не оставит равнодушным никого. </p>
+                            <div class="movie-actions">
+                                <button class="btn btn-primary">Купить билет</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="2">
+                        <div class="movie-poster">
+                            <img src="e6719eed009d83687fe0272056b64c78.png" alt="Фильм 2: Романтика">
+                            <div class="movie-rating">7.8</div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Фильм 2: Касабланка</h3>
+                            <div class="movie-meta">
+                                <span class="genre">Романтика</span>
+                                <span class="duration">105 мин</span>
+                            </div>
+                            <p>Трогательная история любви, которая напоминает нам, что истинные чувства способны преодолеть любые преграды.</p>
+                            <div class="movie-actions">
+                                <button class="btn btn-primary">Купить билет</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="3">
+                        <div class="movie-poster">
+                            <img src="aa3p-gl3k1vHxpBRqwZGUsqRwQRgaPNhX9LvAAoNeQWWOa7UogCKUJA9YmYG5THvMXDSbh9B1wMrxhIQEVuU7pOx.jpg" alt="Фильм 3: Триллер">
+                            <div class="movie-rating">8.2</div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Фильм 3: Led Zeppelin </h3>
+                            <div class="movie-meta">
+                                <span class="genre">Биография</span>
+                                <span class="duration">110 мин</span>
+                            </div>
+                            <p>Напряженный триллер с непредсказуемой концовкой. Каждая минута просмотра будет сопровождаться выбросом адреналина.</p>
+                            <div class="movie-actions">
+                                <button class="btn btn-primary">Купить билет</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="4">
+                        <div class="movie-poster">
+                            <img src="Микки_17.jpg" alt="Фильм 4: Комедия">
+                            <div class="movie-rating">7.5</div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Фильм 4: Микки 17</h3>
+                            <div class="movie-meta">
+                                <span class="genre">Комедия</span>
+                                <span class="duration">95 мин</span>
+                            </div>
+                            <p>Смешная комедия, которая подарит море положительных эмоций и поднимет настроение даже в самый хмурый день.</p>
+                            <div class="movie-actions">
+                                <button class="btn btn-primary">Купить билет</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="5">
+                        <div class="movie-poster">
+                            <img src="tron.jpg" alt="Фильм 5: Фантастика">
+                            <div class="movie-rating">9.0</div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Фильм 5: Трон: Арес </h3>
+                            <div class="movie-meta">
+                                <span class="genre">Фантастика</span>
+                                <span class="duration">130 мин</span>
+                            </div>
+                            <p>Увлекательный научно-фантастический фильм с невероятными спецэффектами и захватывающим сюжетом.</p>
+                            <div class="movie-actions">
+                                <button class="btn btn-primary">Купить билет</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="6">
+                        <div class="movie-poster">
+                            <img src="anotherfilm/HWfQvffjADws0Rm3by1K6DnFT3yqsBX0xeyIbJ-zKdjkvNl8mB3ifK24K2JBvipFlfDYhc6-ZRZfJo_2TeWGjOL7.jpg" alt="Фильм 6: Боевик">
+                            <div class="movie-rating">8.7</div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Фильм 6: Боевик</h3>
+                            <div class="movie-meta">
+                                <span class="genre">Боевик</span>
+                                <span class="duration">115 мин</span>
+                            </div>
+                            <p>Динамичный боевик с невероятными трюками и захватывающими сценами сражений.</p>
+                            <div class="movie-actions">
+                                <button class="btn btn-primary">Купить билет</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="7">
+                        <div class="movie-poster">
+                            <img src="anotherfilm/M5WUNu3xLCQlx0bMeDzgfuAAQMwydhwoS1GVOrX7cXQ2zVfq3xdi7x2uWBTVsFB5-s35q9j_FAzZAlF66MSJbVcW.jpg" alt="Фильм 7: Драма">
+                            <div class="movie-rating">8.9</div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Фильм 7: Ржавчина</h3>
+                            <div class="movie-meta">
+                                <span class="genre">Драма</span>
+                                <span class="duration">125 мин</span>
+                            </div>
+                            <p>Глубокая драма, которая заставит вас по-новому взглянуть на жизнь и отношения.</p>
+                            <div class="movie-actions">
+                                <button class="btn btn-primary">Купить билет</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                        
+                    <div class="movie-card" data-movie-id="9">
+                        <div class="movie-poster">
+                            <img src="add/nova.jpg" alt="Фильм 9: Фантастика">
+                            <div class="movie-rating">8.4</div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Фильм 8: Новокаин</h3>
+                            <div class="movie-meta">
+                                <span class="genre">Фантастика</span>
+                                <span class="duration">128 мин</span>
+                            </div>
+                            <p>Увлекательное  приключение с элементами научной фантастики и захватывающим сюжетом.</p>
+                            <div class="movie-actions">
+                                <button class="btn btn-primary">Купить билет</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="10">
+                        <div class="movie-poster">
+                            <img src="add/f.jpg" alt="Фильм 10: Драма">
+                            <div class="movie-rating">7.9</div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Фильм 9: Формула 1</h3>
+                            <div class="movie-meta">
+                                <span class="genre">Драма</span>
+                                <span class="duration">118 мин</span>
+                            </div>
+                            <p>Глубокая драма о человеческих отношениях и важности принятия сложных жизненных решений.</p>
+                            <div class="movie-actions">
+                                <button class="btn btn-primary">Купить билет</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">О нас</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>"Дом Кино" - это современный кинотеатр в Санкт-Петербурге, который уже более 10 лет радует зрителей лучшими фильмами мирового кинематографа. У нас вы найдете комфортные залы, отличное обслуживание и атмосферу настоящего кинематографического волшебства.</p>
+                        <p>Мы постоянно обновляем наше оборудование, чтобы обеспечить наилучшее качество изображения и звука. Наши залы оснащены системами объемного звука Dolby Atmos и лазерными проекторами 4K.</p>
+                    </div>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-couch"></i>
+                            <h3>Комфортные места</h3>
+                            <p>Эргономичные кресла с подлокотниками</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mountain"></i>
+                            <h3>Отличный звук</h3>
+                            <p>Системы Dolby Atmos и DTS:X</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-tv"></i>
+                            <h3>Высокое качество</h3>
+                            <p>4K проекция и 3D показ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-film"></i> Дом Кино</h3>
+                    <p>Лучший кинотеатр в Санкт-Петербурге</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Санкт-Петербург, ул. Примерная, д. 123</p>
+                    <p><i class="fas fa-phone"></i> +7 (812) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@domkino.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Часы работы</h4>
+                    <p>Пн-Вс: 10:00 - 23:00</p>
+                    <p>Касса: 9:30 - 22:30</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Дом Кино. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-<script src = "script.js" t></script>
 </html>

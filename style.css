@@ -1,0 +1,1140 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #e50914;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #f40612;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 9, 20, 0.3);
+}
+
+.btn-secondary {
+    background-color: #333;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #e50914;
+    border: 2px solid #e50914;
+}
+
+.btn-outline:hover {
+    background-color: #e50914;
+    color: white;
+}
+
+.btn-login, .btn-register {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #ffffff;
+    padding: 8px 16px;
+}
+
+.btn-login:hover, .btn-register:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Шапка */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 28px;
+    color: #e50914;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    color: #e50914;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #e50914;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Герой-секция */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('main.jpeg') no-repeat center;
+    background-size: cover;
+    min-height: 80vh; /* Изменим на min-height чтобы контент мог расширять секцию */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 0;
+}
+
+.hero-content {
+    width: 100%;
+    padding: 20px;
+}
+
+.hero-content .hero-text {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #cccccc;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Стили для карусели афиш */
+.carousel {
+    position: relative;
+    width: 60%;
+    height: 80vh;
+    overflow: hidden;
+    margin: 0 auto;
+    padding-top: 80px; /* Добавляем отступ сверху для учета фиксированного хедера */
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 100px; /* Увеличиваем отступ снизу для большего пространства */
+    left: 50px;
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+}
+
+.carousel-caption h3 {
+    font-size: 2.2rem; /* Увеличиваем размер шрифта заголовка */
+    margin-bottom: 10px;
+    color: #e50914;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem; /* Увеличиваем размер шрифта описания */
+    margin-bottom: 15px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator.active {
+    background: #e50914;
+}
+
+.indicator:hover {
+    background: rgba(29, 9, 20, 0.7);
+}
+
+/* Разделы */
+.section-title {
+    font-size: 2.5rem;
+    margin: 50px 0 30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Фильмы */
+.featured-movies {
+    padding: 50px 0;
+    background-color: #121212;
+    margin-top: 50px;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 фильма в линию */
+    gap: 20px;
+    padding: 20px 0;
+    justify-items: center; /* Выравнивание элементов по центру */
+}
+
+.movie-card {
+    background-color: #1f1f1f;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 350px;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.movie-poster {
+    position: relative;
+    overflow: hidden;
+    flex: 1 0 auto;
+    height: 250px; /* Фиксированная высота для всех постеров */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch; /* Растягиваем по высоте родителя */
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.movie-card:hover .movie-poster img {
+    transform: scale(1.05);
+}
+
+.movie-rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e50914;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.movie-info {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+}
+
+.movie-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.movie-meta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #aaaaaa;
+}
+
+.movie-meta .genre {
+    background-color: #333;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.movie-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Центрируем кнопки */
+}
+
+.movie-actions .btn {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+/* Анимация появления карточек при загрузке */
+.movie-card:not(.initial-animation) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.movie-card:nth-child(1) { animation-delay: 0.1s; }
+.movie-card:nth-child(2) { animation-delay: 0.2s; }
+.movie-card:nth-child(3) { animation-delay: 0.3s; }
+.movie-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для кнопок */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(25, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Анимация для элементов расписания */
+.schedule-item {
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.schedule-item.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Плавающая анимация для логотипа */
+.logo h1 {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Расписание */
+.schedule {
+    padding: 50px 0;
+    background-color: #1a1a1a; /* Сделаем фон немного светлее для лучшей видимости */
+    margin-top: 100px;
+    position: relative; /* Добавим позиционирование */
+    z-index: 1; /* Убедимся, что секция не перекрывается другими элементами */
+}
+
+.schedule-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.date-selector {
+    display: flex;
+    gap: 15px;
+    background: rgba(4, 62, 80, 0.3);
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.date-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.date-btn.active, .date-btn:hover {
+    background: linear-gradient(135deg, #e50914, #f40612);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(229, 9, 20, 0.5);
+}
+
+.genre-filter select {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Адаптивная сетка с минимальной шириной карточки */
+    gap: 25px;
+    width: 100%;
+    max-width: 1400px; /* Увеличиваем максимальную ширину */
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    background: linear-gradient(135deg, #2c3e50, #1a1a2e); /* Современный градиентный фон */
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    min-height: 180px;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-item:hover {
+    background: linear-gradient(135deg, #34495e, #16213e); /* Более яркий градиент при наведении */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.schedule-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.schedule-movie img {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+}
+
+.schedule-info h4 {
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 1.2rem; /* Увеличиваем размер шрифта для лучшей видимости */
+}
+
+.schedule-info p {
+    color: #cccccc; /* Улучшаем видимость текста описания */
+    font-size: 0.9rem;
+}
+
+.showtimes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.showtime {
+    display: inline-block;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #e50914, #f40612); /* Яркий градиент для кнопок времени */
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
+}
+
+.showtime:hover {
+    background: linear-gradient(135deg, #f40612, #e50914);
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(229, 9, 20, 0.5);
+}
+
+/* О нас */
+.about {
+    padding: 50px 0;
+    background-color: #1a1a1a; /* Сделаем фон секции "О нас" более контрастным */
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+}
+
+.feature i {
+    font-size: 2.5rem;
+    color: #e50914;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.feature p {
+    color: #aaaaaa;
+}
+
+/* Футер */
+.main-footer {
+    background-color: #080808; /* Улучшим контрастность футера */
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3, .footer-section h4 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.footer-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e50914;
+}
+
+.footer-section p {
+    color: #aaaaaa;
+    margin-bottom: 8px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #e50914;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #aaaaaa;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .main-nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .movies-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .schedule-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .schedule-movie {
+        width: 100%;
+    }
+    
+    .showtimes {
+        align-self: flex-end;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .movies-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .schedule-filters {
+        flex-direction: column;
+    }
+    
+    .date-selector {
+        justify-content: center;
+    }
+}
+
+/* Модальное окно */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Стили для формы покупки билетов */
+.ticket-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #e50914;
+}
+
+/* Стили для выбора зала */
+.hall-selector {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.hall-option {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.hall-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hall-option.active {
+    border: 2px solid #ffffff;
+    box-shadow: 0 15px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* Стили для схемы мест в кинозале */
+.seat-map {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Информация о выбранных местах */
+.selected-seats-info {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    border-left: 4px solid #e50914;
+}
+
+.selected-seats-info p {
+    margin: 5px 0;
+    color: #ffffff;
+}
+
+.selected-seats-info span {
+    font-weight: bold;
+    color: #e50914;
+}
+
+.seat {
+    aspect-ratio: 4/3;
+    background-color: #444;
+    border: 2px solid #666;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.seat:hover {
+    transform: scale(1.1);
+    background-color: #555;
+    border-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.seat.selected {
+    background-color: #e50914;
+    border-color: #ff0000;
+    box-shadow: 0 15px rgba(229, 9, 20, 0.7);
+}
+
+.seat.occupied {
+    background-color: #222;
+    border-color: #555;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.screen {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto 30px;
+    background-color: #555;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    position: relative;
+}
+
+.screen::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #777;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #aaaaaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #ffffff;
+}
+
+/* Стили для выбора зала */
+.hall-selector {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.hall-option {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.hall-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hall-option.active {
+    border: 2px solid #ffffff;
+    box-shadow: 0 15px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* Стили для схемы мест в кинозале */
+.seat-map {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Информация о выбранных местах */
+.selected-seats-info {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    border-left: 4px solid #e50914;
+}
+
+.selected-seats-info p {
+    margin: 5px 0;
+    color: #ffffff;
+}
+
+.selected-seats-info span {
+    font-weight: bold;
+    color: #e50914;
+}
+
+.seat {
+    aspect-ratio: 4/3;
+    background-color: #444;
+    border: 2px solid #666;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.seat:hover {
+    transform: scale(1.1);
+    background-color: #555;
+    border-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.seat.selected {
+    background-color: #e50914;
+    border-color: #ff0000;
+    box-shadow: 0 15px rgba(229, 9, 20, 0.7);
+}
+
+.seat.occupied {
+    background-color: #222;
+    border-color: #555;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.screen {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto 30px;
+    background-color: #555;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    position: relative;
+}
+
+.screen::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #777;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #aaaaaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #ffffff;
+}
+
+.ticket-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #e50914;
+}
